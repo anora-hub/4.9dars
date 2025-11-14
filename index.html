@@ -13,19 +13,21 @@
 
     <header class="bg-[white] fixed  w-full  top-[0] p-[20px] z-2">
         <div class=" relative container mx-auto px-[20px] items-center flex justify-between  ">
-            <input class=" border-[2px]/30 max-w-[800px] w-full border-[1px] text-[black] rounded-[5px] p-[10px]"
+            <input id="search-input"
+                class=" border-[2px]/30 max-w-[800px] w-full border-[1px] text-[black] rounded-[5px] p-[10px]"
                 placeholder="F.I.Sh" type="search">
             <div class=" flex gap-[20px] items-center">
-                <select
+                <select id="lavozim-turi"
                     class=" border-[2px]  bg-[blue] text-white  w-[200px]  border-[1px] text-[black] rounded-[5px] p-[10px]">
-                    <option value=" Lavozim"> Lavozimni turini tanlang</option>
+
+                    <option value="lavozimni turini tanlang">lavozimni turini tanlang</option>
                     <option value="junior">junior</option>
                     <option value="middle">middle</option>
                     <option value="senior">senior</option>
 
                 </select>
-                <select class=" border-[2px]   bg-[black] text-white  border-[1px] text-[black] rounded-[5px] p-[10px]">
-                    <option value="manzil">manzilni tanlang</option>
+                <select id="manzillar" class=" border-[2px]   bg-[black] text-white  border-[1px] text-[black] rounded-[5px] p-[10px]">
+                    <option value="manzilni tanlang">manzilni tanlang</option>
                     <option value="buxor">Buxoro</option>
                     <option value="toshkent">Toshkent</option>
                     <option value="samarqand">Samarqand</option>
@@ -33,7 +35,8 @@
                     <option value=" fargoba">Farg'ona</option>
                     <option value="sirdaryo">Sirdaryo</option>
                 </select>
-                <button id="add-btn" class=" border-[2px]  bg-[green] text-white border-[1px]   text-[black] rounded-[5px] p-[10px]">
+                <button id="add-btn"
+                    class=" border-[2px]  bg-[green] text-white border-[1px]   text-[black] rounded-[5px] p-[10px]">
                     Qo'shish
                 </button>
             </div>
@@ -79,21 +82,22 @@
                 </tr>
             </thead>
             <tbody id="tbody" class="">
-               
+
 
             </tbody>
         </table>
     </div>
 
-    <div id="outer-modal"    class=" hidden  fixed w-full h-full top-0 left-0 flex items-center justify-center bg-black/30    z-4">
+    <div id="outer-modal"
+        class=" hidden  fixed w-full f h-full top-0 left-0 flex items-center justify-center bg-black/30 z-4">
         <form id="inner-modal" class="max-w-md mx-auto bg-[white] p-[20px]">
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="name" name="firs-name" id="firs-name"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required />
-            <label for="firs-name"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">ism</label>
-        </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="name" name="firs-name" id="firs-name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " required />
+                <label for="firs-name"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">ism</label>
+            </div>
             <div class="relative z-0 w-full mb-5 group">
                 <input type="name" name="last-name" id="last-name"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -102,25 +106,32 @@
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">familiya</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <select class="  border-b border-[black] text-[15px] text-black/50  text-black w-[400px] border-b-2   text-[black] focus:border-blue-500 focus:border-b  p-[10px]">
+                <select
+                    class="  border-b border-[black] text-[15px] text-black/50  text-black w-[400px] border-b-2   text-[black] focus:border-blue-500 focus:border-b  p-[10px]">
                     <option value="manzil">manzilni tanlang</option>
                     <option value="buxor">Buxoro</option>
                     <option value="toshkent">Toshkent</option>
                     <option value="samarqand">Samarqand</option>
-                  
+                    <option value="jizax">Jizzax</option>
+                    <option value=" fargoba">Farg'ona</option>
+                    <option value="sirdaryo">Sirdaryo</option>
+
                 </select>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-5 group">
-                  <input class=" border-b  border-[black] text-[15px] text-black/50 text-black w-[200px] border-b-[2px]   text-[black] focus:border-blue-500 focus:border-b  p-[10px]" type="date">
+                    <input
+                        class=" border-b  border-[black] text-[15px] text-black/50 text-black w-[200px] border-b-[2px]   text-[black] focus:border-blue-500 focus:border-b  p-[10px]"
+                        type="date">
                 </div>
                 <div class="relative z-0 w-full mb-5 group">
-                    <select class="  border-b  border-[black] text-[15px] text-black/50 text-black w-[190px] border-b-[2px]    text-[black] focus:border-blue-500 focus:border-b  p-[10px]">
-                        <option value="manzil">React</option>
-                        <option value="buxor">Nodejs</option>
-                        <option value="toshkent">go</option>
-                        <option value="samarqand">Python</option>
-                    
+                    <select
+                        class="  border-b  border-[black] text-[15px] text-black/50 text-black w-[190px] border-b-[2px]    text-[black] focus:border-blue-500 focus:border-b  p-[10px]">
+                        <option value="React">React</option>
+                        <option value="Nodejs">Nodejs</option>
+                        <option value="go">go</option>
+                        <option value="Python">Python</option>
+
                     </select>
                 </div>
             </div>
@@ -128,11 +139,11 @@
                 <div class="relative z-0 w-full mb-5 group">
                     <select
                         class="  border-b   w-[190px] border-b-[2px]  border-[black] text-[15px] text-black/50  text-[black] focus:border-blue-500 focus:border-b  p-[10px]">
-                        <option value="manzil">junior</option>
-                        <option value="buxor">middle</option>
-                        <option value="toshkent">senior</option>
-                        
-                    
+                        <option value="junior">junior</option>
+                        <option value="middle">middle</option>
+                        <option value="senior">senior</option>
+
+
                     </select>
                 </div>
                 <div class="relative z-0 w-full mb-5 group">
@@ -147,18 +158,17 @@
             <div class="flex items-center mb-[20px]">
                 <input id="link-checkbox" type="checkbox" value=""
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="link-checkbox" class="ms-2 text-sm font-medium text-gray/50 dark:text-gray">turmush qurganmi<a
-                        href="#" class="text-blue-600 dark:text-blue-500 hover:underline"></a></label>
+                <label for="link-checkbox" class="ms-2 text-sm font-medium text-gray/50 dark:text-gray">turmush
+                    qurganmi<a href="#" class="text-blue-600 dark:text-blue-500 hover:underline"></a></label>
             </div>
 
 
-            <button 
-            id="btn"
-            type="submit"
+            <button id="btn" type="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Qo'shish</button>
         </form>
     </div>
 
+   
 
 
 

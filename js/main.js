@@ -1,6 +1,55 @@
 let students = JSON.parse(localStorage.getItem("students") || "[]");
+let search = document.getElementById("search-input")
+let lavozimTuri = document.getElementById("lavozim-turi")
+let manzilar = document.getElementById("manzillar")
 
 localStorage.setItem("students", JSON.stringify(students))
+
+
+lavozimTuri.addEventListener("click" , function(e){
+let selected = e.target.value;
+    if (selected === "lavozimni turini tanlang"){
+    showstudents(tbody, students)
+}else{
+    let selectedGroupStudents = students.filter((el) => el.junior === selected)
+    showstudents(tbody, selectedGroupStudents)
+}
+})
+
+
+manzilar.addEventListener("click", function (e) {
+    let manzilValue = e.target.value;
+    if (manzilValue === "manzilni tanlang") {
+        showstudents(tbody, students)
+    } else {
+        let manzilSearched = students.filter((el) => el.manzil === manzilValue)
+        showstudents(tbody, manzilSearched)
+    }
+
+})
+
+
+
+
+
+
+
+search.addEventListener("input" , function(e){
+    let searchValue = e.target.value; 
+    if(searchValue === ""){
+        showstudents(tbody, studentsSearched)
+
+    }else{
+     let studentsSearched =  students.filter((el) => el.ism.toLowerCase().includes(searchValue.toLowerCase()))
+        showstudents(tbody, studentsSearched )
+
+    }
+
+})
+
+
+
+
 
 console.log(students);
 
@@ -87,7 +136,7 @@ innerModal.addEventListener("submit", function (e) {
 
 function showstudents(contact, data) {
     contact.innerHTML = ""
-    data.map((el, index) => {
+   data.map((el, index) => {
         contact.innerHTML += `
      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -127,7 +176,7 @@ function showstudents(contact, data) {
                     </td>
                 </tr>
     `
-    })
+    })  
 }
 showstudents(tbody, students)
 
